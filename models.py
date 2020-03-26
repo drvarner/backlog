@@ -59,7 +59,9 @@ class Game(db.Model):
     completed = db.Column(db.DateTime)
 
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
-    genre = db.relationship('Genre', backref=db.backref('genre', lazy=True))
+    platform_id = db.Column(db.Integer, db.ForeignKey('platform.id'))
+    status_id = db.Column(db.Integer, db.ForeignKey('status.id'))
+    criteria_id = db.Column(db.Integer, db.ForeignKey('criteria.id'))
 
     def __repr__(self):
         return f'<Game {self.title}>'
