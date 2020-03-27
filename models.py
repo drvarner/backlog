@@ -31,16 +31,6 @@ class Status(db.Model):
         return f'<Status {self.name}>'
 
 
-class Criteria(db.Model):
-    __tablename__ = 'criteria'
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50), unique=True, nullable=False)
-    desc = db.Column(db.String(250))
-
-    def __repr__(self):
-        return f'<Criteria {self.name}>'
-
-
 class Game(db.Model):
     __tablename__ = 'game'
     id = db.Column(db.Integer, primary_key=True)
@@ -61,7 +51,7 @@ class Game(db.Model):
     genre_id = db.Column(db.Integer, db.ForeignKey('genre.id'))
     platform_id = db.Column(db.Integer, db.ForeignKey('platform.id'))
     status_id = db.Column(db.Integer, db.ForeignKey('status.id'))
-    criteria_id = db.Column(db.Integer, db.ForeignKey('criteria.id'))
+    goal_id = db.Column(db.Integer, db.ForeignKey('status.id'))
 
     def __repr__(self):
         return f'<Game {self.title}>'

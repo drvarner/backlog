@@ -30,7 +30,7 @@ def create_app(config_class=Config):
 
     import models
 
-    from endpoints import api
-    app.register_blueprint(api)
+    from endpoints import api_bp
+    app.register_blueprint(api_bp)
 
     return app

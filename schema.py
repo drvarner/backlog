@@ -1,11 +1,16 @@
 # schema.py
-from models import Genre, Platform, Status, Criteria, Game
+from models import *
 from backlog import ma
 
 
 class GenreSchema(ma.SQLAlchemyAutoSchema):
     class Meta:
         model = Genre
+
+
+class PlatformSchema(ma.SQLAlchemyAutoSchema):
+    class Meta:
+        model = Platform
 
 
 class StatusSchema(ma.SQLAlchemyAutoSchema):
